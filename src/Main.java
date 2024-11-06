@@ -16,16 +16,12 @@ public class Main {
     public static int solution(int firstNumber, int secondNumber, String operator){
         int result = 0;
 
-        if(Objects.equals(operator, "+")){
-            result = firstNumber + secondNumber;
-        } else if (Objects.equals( operator, "-") ) {
-            result = firstNumber - secondNumber;
-        } else if (Objects.equals(operator, "*")) {
-            result = firstNumber * secondNumber;
-        } else if (Objects.equals(operator, "/")) {
-            result = firstNumber / secondNumber;
-        }else{
-            System.out.println("Выберите верный оператор");
+        switch (operator) {
+            case "+" -> result = firstNumber + secondNumber;
+            case "-" -> result = firstNumber - secondNumber;
+            case "*" -> result = firstNumber * secondNumber;
+            case "/" -> result = firstNumber / secondNumber;
+            case null, default -> System.out.println("Выберите верный оператор");
         }
         System.out.println("Ваш результат: " + result);
         return result;
